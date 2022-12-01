@@ -75,7 +75,7 @@ $().ready(function () {
       min: -50,
       max: 50,
       slide: function (event, ui) {
-        $("#min_r").val(ui.value);
+        $("#max_c").val(ui.value);
         if (count > 1) {
           refresh();
         }
@@ -97,7 +97,7 @@ $().ready(function () {
       min: -50,
       max: 50,
       slide: function (event, ui) {
-        $("#max_row").val(ui.value);
+        $("#max_r").val(ui.value);
         if (count > 1) {
           refresh();
         }
