@@ -1,0 +1,184 @@
+/*
+Hannah Guillen, UMass Lowell Computer Science
+  hannah_guillen@student.uml.edu, hguillen@cs.uml.edu
+Date: November 29, 2022
+File: style.css
+GUI Assignment: Using jQuery Plugin/UI with Dynamic Table
+  This CSS file styles and adds layout to webpage.
+
+Copyright (c) 2022 by Hannah Guillen. All rights reserved. May be freely
+copied or excerpted for educational purposes with credit to the author.
+*/
+
+/* Page title */
+.header{
+  margin-left: 100px;
+  text-align: center;
+  color: Thistle;
+  text-shadow: 2px 2px black;
+}
+
+/* Page body */
+body {
+  margin: 0;
+  background: #b47ede;
+  font-family: 'Courier New', monospace;
+}
+
+/* User input form */
+form {
+  margin: 50px;
+  width: 25%;
+  border: 3px solid #b660cd;
+  padding: 5px;
+  text-align: center;
+  background-color: Thistle;
+  border-radius: 5px;
+}
+
+/* .form {
+  display: flex;
+  align-items: start;
+  justify-content: left;
+} */
+
+/* Input text */
+.input {
+  display: inline-block;
+  width: 200px;
+  padding: 10px;
+  font-size: 12pt;
+}
+
+/* Input text boxes */
+input[type=text]{
+  border: 2px solid #b660cd;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 11pt;
+  color: #b660cd;
+}
+
+/* Table container box */
+#tableBox {
+  margin: 470px;
+  height: 500px;
+  overflow: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 60%;
+  display: inline-block;
+}
+
+/* Multiplication table */
+table {
+  border-collapse: collapse;
+  margin: auto;
+  width: 100%;
+  border: 3px solid #b660cd;
+  padding: 10px;
+  height: 100%;
+}
+
+/* Beginning X and Y boxes in table */
+.initial_xy {
+  background: rgb(149, 105, 191);
+  color: white;
+}
+
+/* Value boxes inside table */
+td {
+  border: 1px solid #b660cd;
+  padding: 3px;
+  text-align: center;
+  background-color: Thistle;
+}
+
+/* Slider display */
+.slider {
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* Submit Values button */
+#submit {
+  background-color: #b660cd;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/* Submit button hover action */
+#submit:hover {
+  transform: scale(1.1);
+}
+
+/* Table tabs */
+#newTabs {
+  width: 50%;
+  height: 500px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: auto;
+  background-color: thistle;
+}
+
+/* Labels given for tabs */
+#tLabels {
+  margin: auto;
+  padding: 5px;
+  background-color: white;
+  border: 3px solid #b660cd;
+  text-align: center;
+}
+
+/* Total tabs generated to select */
+#tTabs {
+  border-radius: 30px;
+  background-color: rgb(149, 105, 191);
+  text-align: center;
+  color: white;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+/* Exit button for tabs */
+#btnExit{
+  display: inline;
+  border-radius: 20%;
+  background-color: thistle;
+  color: black;
+}
+
+.delete{
+  border: none;
+  border-radius: 20px;
+  background-color: #b660cd;
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-size: 14pt;
+  padding: 10px;
+}
+
+.delete:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive layout for media screens */
+@media screen and (max-width: 500px) {
+  form {
+    width: 80%;
+  }
+  #tableBox {
+    width: 90%;
+  }
+}
