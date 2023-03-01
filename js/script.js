@@ -2,6 +2,7 @@
 Hannah Guillen, UMass Lowell Computer Science
   hannah_guillen@student.uml.edu, hguillen@cs.uml.edu
 Date: November 29, 2022
+Last edited on: February 28, 2023
 File: script.js
 GUI Assignment: Using jQuery Plugin/UI with Dynamic Table
   This JavaScript file contains all necessary functions for the table.
@@ -57,7 +58,14 @@ function genTable(tCount, min_c, max_c, min_r, max_r) {
 }
 
 // jQuery sliders and tabs
+// Updates automatically when either the slider is changed or new text value is entered
 $().ready(function () {
+  function updateTable() {
+    if (count > 1) {
+      refresh();
+    }
+  }
+
   $(function () {
     $("#minc_s").slider({
       value: 1,
@@ -65,9 +73,7 @@ $().ready(function () {
       max: 50,
       slide: function (event, ui) {
         $("#min_c").val(ui.value);
-        if (count > 1) {
-          refresh();
-        }
+        updateTable();
       }
     });
     $("#maxc_s").slider({
@@ -76,9 +82,7 @@ $().ready(function () {
       max: 50,
       slide: function (event, ui) {
         $("#max_c").val(ui.value);
-        if (count > 1) {
-          refresh();
-        }
+        updateTable();
       }
     });
     $("#minr_s").slider({
@@ -87,9 +91,7 @@ $().ready(function () {
       max: 50,
       slide: function (event, ui) {
         $("#min_r").val(ui.value);
-        if (count > 1) {
-          refresh();
-        }
+        updateTable();
       }
     });
     $("#maxr_s").slider({
@@ -98,61 +100,14 @@ $().ready(function () {
       max: 50,
       slide: function (event, ui) {
         $("#max_r").val(ui.value);
-        if (count > 1) {
-          refresh();
-        }
+        updateTable();
       }
     });
-  })
 
-  // jQuery form validation
-  $("#signupForm").validate( {
-    rules: {
-      min_c: {
-        required: true,
-        range: [-50, 50]
-      },
-      max_c: {
-        required: true,
-        range: [-50, 50]
-      },
-      min_r: {
-        required: true,
-        range: [-50, 50]
-      },
-      max_r: {
-        required: true,
-        range: [-50, 50]
-      }
-    },
-    messages: {
-      min_c: {
-        required: "Enter a minimum value for the columns.",
-        range: "Only enter a number between -50 and 50!",
-      },
-      max_c: {
-        required: "Enter a maximum value for the columns.",
-        range: "Only enter a number between -50 and 50!",
-      },
-      min_r: {
-        required: "Enter a minimum value for the rows.",
-        range: "Only enter a number between -50 and 50!",
-      },
-      max_r: {
-        required: "Enter a maximum value for the rows.",
-        range: "Only enter a number between -50 and 50!",
-      },
-    }
-  });
-
-  $('#signupForm').submit(function (event) {
-    event.preventDefault();
-    if ($('#signupForm').valid()) {
-      newTab();
-    }
-  });
-  $("#newTabs").on('DOMSubtreeModified', function () {
-    $("#newTabs").tabs();
+// text inputs
+    $("#min_c, #max_c, #min_r, #max_r").on('input', function () {
+      updateTable();
+    });
   });
 });
 
